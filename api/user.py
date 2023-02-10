@@ -23,7 +23,7 @@ class UserAPI:
                 return {'message': f'Name is missing, or is less than 2 characters'}, 210
             # validate uid
             points = body.get('points')
-            if points is None or len(points) < 2:
+            if points is None or len(points) < 1:
                 return {'message': f'Points is missing, or is less than 2 characters'}, 210
             time = body.get('time')
             if time is None or len(time) < 0:
@@ -34,7 +34,9 @@ class UserAPI:
 
             ''' #1: Key code block, setup USER OBJECT '''
             uo = User(name=name, 
-                      points=points)
+                      points=points,
+                      time=time,
+                      pin=pin)
             
             ''' Additional garbage error checking '''
             # set password if provided
