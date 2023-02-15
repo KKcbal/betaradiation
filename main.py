@@ -19,7 +19,7 @@ from projects.projects import app_projects # Blueprint directory import projects
 # register URIs
 app.register_blueprint(joke_api) # register api routes
 app.register_blueprint(covid_api) # register api routes
-app.register_blueprint(user_api) # register api routes
+app.register_blueprint(piss_api) # register api routes
 app.register_blueprint(app_projects) # register app pages
 
 @app.errorhandler(404)  # catch for URL not found
@@ -38,7 +38,7 @@ def stub():
 @app.before_first_request
 def activate_job():
     initJokes()
-    initUsers()
+    initPisses()
 
 # this runs the application on the development server
 if __name__ == "__main__":
